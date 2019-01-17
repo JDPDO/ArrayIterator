@@ -10,8 +10,11 @@ namespace ArrayIterator
     {
         public Program()
         {
+            // Hier definierst du das verzweigte Array. ;D
+            // Also Ein Array, dass mehrere Arrays hat.
             werte = new string[][]
             {
+                // Erstelle Array in Feld 0 das "K12" und "130" enthält 
                 new string[] {"K12", "130"},
                 new string[] {"B49", "112"},
                 new string[] {"K12", "138"},
