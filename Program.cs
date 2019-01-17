@@ -21,17 +21,19 @@ namespace ArrayIterator
         }
 
         string[][] werte;
-        static Program program;
+        static Program program; // für dich irrelevant
 
         static void Main(string[] args)
         {
-            program = new Program();
-            program.DurchlaufeVerzweigtesArray();
+            program = new Program();  // das auch irrelvant
+            program.DurchlaufeVerzweigtesArray(); 
             program.WarteBisEnter();
         }
 
+        // Mit der Methode durchläufst du das verzweigte Array.
         public void DurchlaufeVerzweigtesArray()
         {
+            // Für jedes Element im übergordnetem Array.
             for (int i = 0; i < werte.GetLength(0); i++)
             {
                 GibAus(werte[i][0] + "\t" + werte[i][1]);
