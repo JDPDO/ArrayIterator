@@ -61,28 +61,43 @@ namespace ArrayIterator
             // Schleife stellt Sucharray
             for (int i = 0; i < werte.GetLength(0); i++)
             {
+                // Am Anfang nicht wahr, damit er erstmal alle durchsucht.
                 bool gibtEs = false;
+
+                // Für jedes Element in Kommt vor
                 for (int j = 0; j < kommtVor.Length; j++)
                 {
+                    // Ist das aktuelle Element vom kommtVor-Array 
+                    // gleich das gesuchte Element?
                     if (kommtVor[j] == werte[i][0])
                     {
+                        // Dann gibt es das schon im kommtVor-Array.
                         gibtEs = true;
                     }
                 }
+
+                // Wenn es das Element noch nicht im kommtVor-Array gab, dann:
                 if (!gibtEs)
                 {
+                    // Tue das aktuelle Element in das kommtVor-Array
                     kommtVor[i] = werte[i][0];
+                    // Gebe es aus
                     GibAus(werte[i][0] + "\t");
+                    // Liste alle seine gezählten Werte auf
                     ListeWerteAuf(werte[i][0]);
                 }
             }
 
             void ListeWerteAuf(string element)
             {
+                // Für jedes Element im werte-Array:
                 for (int i = 0; i < werte.GetLength(0); i++)
                 {
+                    // Wenn das aktuelle Element im werte-Array
+                    // gleich das gesucht ist.
                     if (werte[i][0] == element)
                     {
+                        // Dann gebe den Messwert aus.
                         GibAus("\t" + werte[i][1]);
                     }
                 }
