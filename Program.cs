@@ -29,7 +29,8 @@ namespace ArrayIterator
         static void Main(string[] args)
         {
             program = new Program();  // das auch irrelvant
-            program.DurchlaufeVerzweigtesArray(); 
+            //program.DurchlaufeVerzweigtesArray();
+            program.ListeGeraeteAuf();
             program.WarteBisEnter();
         }
 
@@ -51,6 +52,41 @@ namespace ArrayIterator
         private void WarteBisEnter()
         {
             Console.ReadLine();
+        }
+
+        private void ListeGeraeteAuf()
+        {
+            string[] kommtVor = new string[werte.GetLength(0)];
+
+            // Schleife stellt Sucharray
+            for (int i = 0; i < werte.GetLength(0); i++)
+            {
+                bool gibtEs = false;
+                for (int j = 0; j < kommtVor.Length; j++)
+                {
+                    if (kommtVor[j] == werte[i][0])
+                    {
+                        gibtEs = true;
+                    }
+                }
+                if (!gibtEs)
+                {
+                    kommtVor[i] = werte[i][0];
+                    GibAus(werte[i][0] + "\t");
+                    ListeWerteAuf(werte[i][0]);
+                }
+            }
+
+            void ListeWerteAuf(string element)
+            {
+                for (int i = 0; i < werte.GetLength(0); i++)
+                {
+                    if (werte[i][0] == element)
+                    {
+                        GibAus("\t" + werte[i][1]);
+                    }
+                }
+            }
         }
     }
 }
